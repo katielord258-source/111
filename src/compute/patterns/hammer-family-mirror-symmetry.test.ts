@@ -205,7 +205,6 @@ const N = 20000;
 describe('D2: зеркальная симметрия hammer-семейства (промт "Исправление по воронке гейтов")', () => {
   it('hammer(исходные свечи) == shooting-star(зеркало: цена→-цена, RSI→100-RSI), 20000 случаев', () => {
     const rnd = makeRng(20260925);
-    let bothNull = 0;
     let bothFired = 0;
     let mismatches = 0;
     for (let i = 0; i < N; i++) {
@@ -213,7 +212,6 @@ describe('D2: зеркальная симметрия hammer-семейства 
       const hammer = detectHammer(toOriginalCtx(c));
       const star = detectShootingStar(toMirroredCtx(c));
       if (hammer === null && star === null) {
-        bothNull++;
         continue;
       }
       if (hammer === null || star === null) {

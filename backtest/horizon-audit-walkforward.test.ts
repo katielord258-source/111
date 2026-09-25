@@ -4,7 +4,6 @@ import {
   dedupeOccurrences,
   seedNoDetectionGroups,
   selectBestExpiry,
-  accuracyForExpiry,
   type Occurrence,
 } from './horizon-audit';
 import { computeFoldBoundaries, assignFoldIndex } from './horizon-partitioning';

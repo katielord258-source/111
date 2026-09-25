@@ -39,7 +39,6 @@ import { detectHtfFvgZones } from '@/compute/patterns/fvg-nested';
 // же диапазона; с фиксом — ровно одно представление на всех сдвигах.
 // ─────────────────────────────────────────────────────────────────────────
 
-const HTF_FACTOR = 5; // должен совпадать с HTF_FACTOR в order-block-nested.ts/fvg-nested.ts
 const WINDOW_SIZE = 500; // тот же порядок, что windowSize в backtest/config.ts
 const N_CONSECUTIVE_SHIFTS = 25;
 // Граница диапазона "устоявшейся" истории — подобрана вручную под

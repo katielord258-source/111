@@ -81,8 +81,6 @@ export function simulate(candles: Candle[], options: SimulatorOptions): Simulate
   for (let i = minStart; i < candles.length - options.barsToResolve; i++) {
     const window = candles.slice(i - options.windowSize + 1, i + 1);
     const lastCandle = candles[i];
-    const serverNowMs = (lastCandle.time + tfSeconds) * 1000;
-
     const { signal } = runEngine({
       symbolId: options.symbol,
       timeframe: options.timeframe,
