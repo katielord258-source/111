@@ -1,0 +1,52 @@
+# Диагностика условного продолжения/разворота после крупных свечей (реальные данные Deriv).
+name: Continuation audit — условное продолжение 1m
+
+on:
+  workflow_dispatch:
+    inputs:
+      symbols:
+        description: 'Инструменты через запятую'
+        default: 'EURUSD,USDJPY,BTCUSDT,ETHUSDT'
+      from:
+        description: 'С даты (ГГГГ-ММ-ДД)'
+        default: '2026-03-01'
+      to:
+        description: 'По дату (ГГГГ-ММ-ДД)'
+        default: '2026-09-17'
+      horizons:
+        description: 'Горизонты в барах через запятую'
+        default: '1,2,3,5,10'
+
+permissions:
+  contents: read
+
+jobs:
+  continuation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # НЕ 20: нужен глобальный WebSocket
+          cache: npm
+      - run: npm ci
+
+      - name: Прогон continuation-audit
+        run: |
+          npm run backtest:continuation-audit -- \
+            --symbols="${{ inputs.symbols }}" \
+            --from="${{ inputs.from }}" --to="${{ inputs.to }}" \
+            --horizons="${{ inputs.horizons }}"
+
+      - name: Показать отчёт на странице запуска
+        if: success()
+        run: cat backtest/output/continuation-audit-*.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: continuation-output
+          path: backtest/output/continuation-audit-*.md
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,52 @@
+# Предзаданный форвард-тест «разворот после самой крупной свечи» (rule: reversal-top1pct-v1).
+# calibrate — один раз, до старта форварда; progress — только число событий; evaluate — единственный вердикт.
+name: Forward test — разворот после крупной свечи
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'calibrate | progress | evaluate'
+        default: 'progress'
+      to:
+        description: 'По дату включительно (ГГГГ-ММ-ДД, пусто = сегодня UTC)'
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  forward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # НЕ 20: нужен глобальный WebSocket
+          cache: npm
+      - run: npm ci
+
+      - name: Прогон forward-test
+        run: |
+          ARGS="--mode=${{ inputs.mode }}"
+          if [ -n "${{ inputs.to }}" ]; then ARGS="$ARGS --to=${{ inputs.to }}"; fi
+          npm run backtest:forward-test -- $ARGS | tee forward-test.txt
+
+      - name: Вывод на страницу запуска
+        if: always()
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat forward-test.txt >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forward-test-${{ inputs.mode }}
+          path: |
+            forward-test.txt
+            backtest/output/forward-test-*.json
+            backtest/output/forward-test-*.md
+          if-no-files-found: warn
+          retention-days: 90

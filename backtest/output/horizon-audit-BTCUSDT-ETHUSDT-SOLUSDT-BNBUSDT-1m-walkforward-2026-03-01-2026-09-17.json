@@ -1,0 +1,4378 @@
+{
+  "meta": {
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "BNBUSDT"
+    ],
+    "timeframe": "1m",
+    "from": "2026-03-01",
+    "to": "2026-09-17",
+    "split": "walkforward",
+    "walkForwardFolds": 8,
+    "purgeBars": 30,
+    "wilsonMargin": 0,
+    "candles1mTotal": 1151210,
+    "candlesResampledTotal": 1151210,
+    "windowSize": 500,
+    "minSamples": 30,
+    "minSamplesForSignificance": 200,
+    "alpha": 0.05,
+    "auditSchemaVersion": 2,
+    "algorithmVersion": 5,
+    "payoutPercent": 80,
+    "breakevenRate": 0.5555555555555556,
+    "dedupeScope": "pool",
+    "indicators": "live",
+    "generatedAt": "2026-09-20T15:33:31.466Z"
+  },
+  "poolMeta": {
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "BNBUSDT"
+    ],
+    "split": "walkforward",
+    "walkForwardFolds": 8,
+    "purgeBars": 30,
+    "wilsonMargin": 0,
+    "payoutPercent": 80,
+    "breakevenRate": 0.5555555555555556,
+    "dedupeScope": "pool",
+    "indicators": "live",
+    "indicatorCount": 18,
+    "correlationWarning": "Пул содержит 4 инструментов. Корреляция между инструментами (особенно forex-парами с общей валютой и крипто-парами к USDT) может завышать эффективный размер выборки. Сырой p-value НЕ корректируется на межинструментную корреляцию — он оставлен только для сравнения с прошлыми отчётами. Вердикт строится по дедуплицированным наблюдениям с независимостью ПО ВСЕМУ ПУЛУ (--dedupe-scope=pool): сигналы разных инструментов в пределах горизонта считаются одним событием — это консервативная поправка на межинструментную корреляцию.",
+    "perSymbolCandleCounts": [
+      {
+        "symbolId": "BTCUSDT",
+        "candles1m": 287804,
+        "candlesResampled": 287804
+      },
+      {
+        "symbolId": "ETHUSDT",
+        "candles1m": 287804,
+        "candlesResampled": 287804
+      },
+      {
+        "symbolId": "SOLUSDT",
+        "candles1m": 287798,
+        "candlesResampled": 287798
+      },
+      {
+        "symbolId": "BNBUSDT",
+        "candles1m": 287804,
+        "candlesResampled": 287804
+      }
+    ]
+  },
+  "gateFunnel": {
+    "hammer:00-evaluated": 1149090,
+    "hammer:01-context": 705800,
+    "hammer:02-session": 300353,
+    "hammer:03-rsi": 82423,
+    "hammer:04-geometry": 4210,
+    "hammer:05-confirmation": 1117,
+    "hammer:06-confidence": 73,
+    "hanging-man:00-evaluated": 1149090,
+    "hanging-man:01-context": 708898,
+    "hanging-man:02-session": 300238,
+    "hanging-man:03-rsi": 83184,
+    "hanging-man:04-geometry": 3696,
+    "hanging-man:05-confirmation": 861,
+    "hanging-man:06-confidence": 58,
+    "inverted-hammer:00-evaluated": 1149090,
+    "inverted-hammer:01-context": 705800,
+    "inverted-hammer:02-session": 300353,
+    "inverted-hammer:03-rsi": 82423,
+    "inverted-hammer:04-geometry": 3775,
+    "inverted-hammer:05-confirmation": 889,
+    "inverted-hammer:06-confidence": 78,
+    "mean-reversion:00-evaluated": 1149090,
+    "mean-reversion:01-indicators": 1149090,
+    "mean-reversion:02-no-bos-block": 1145439,
+    "mean-reversion:03-adx": 654739,
+    "mean-reversion:04-bar-geometry": 81435,
+    "mean-reversion:05-band-exit-rsi": 41,
+    "shooting-star:00-evaluated": 1149090,
+    "shooting-star:01-context": 708898,
+    "shooting-star:02-session": 278187,
+    "shooting-star:04-geometry": 14370,
+    "shooting-star:05-confirmation": 7152,
+    "shooting-star:06-confidence": 1399
+  },
+  "results": [
+    {
+      "patternName": "liquidity-sweep",
+      "setupType": "reversal-at-key-level",
+      "totalOccurrences": 418,
+      "trainValCount": 1565,
+      "testCount": 352,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.5397727272727273,
+      "testWinCount": 190,
+      "testDecidedCount": 352,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.15001758327154277,
+      "significant": false,
+      "wilsonLowerBound": 0.4875547348139253,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 374,
+      "independentTestDecided": 317,
+      "testAccuracyDeduped": 0.5425867507886435,
+      "pValueDeduped": 0.14408684169734653,
+      "independentTestWins": 172,
+      "wilsonLowerBoundDeduped": 0.48756150157768274,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.499577068136811,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 113,
+          "testCount": 92,
+          "testDecided": 86,
+          "testAccuracy": 0.5930232558139535
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 104,
+          "testCount": 89,
+          "testDecided": 89,
+          "testAccuracy": 0.4606741573033708
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 102,
+          "testCount": 91,
+          "testDecided": 91,
+          "testAccuracy": 0.6153846153846154
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 99,
+          "testCount": 89,
+          "testDecided": 86,
+          "testAccuracy": 0.4883720930232558
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.4107142857142857,
+          "testAccuracy": 0.5397727272727273,
+          "testDecided": 352
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.38181818181818183,
+          "testAccuracy": 0.4915254237288136,
+          "testDecided": 354
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.2807017543859649,
+          "testAccuracy": 0.49166666666666664,
+          "testDecided": 360
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 57,
+          "bestExpiryBars": 1,
+          "testDecided": 62,
+          "testWins": 41
+        },
+        {
+          "fold": 2,
+          "trainCount": 120,
+          "bestExpiryBars": 1,
+          "testDecided": 63,
+          "testWins": 30
+        },
+        {
+          "fold": 3,
+          "trainCount": 184,
+          "bestExpiryBars": 1,
+          "testDecided": 60,
+          "testWins": 26
+        },
+        {
+          "fold": 4,
+          "trainCount": 244,
+          "bestExpiryBars": 1,
+          "testDecided": 26,
+          "testWins": 14
+        },
+        {
+          "fold": 5,
+          "trainCount": 273,
+          "bestExpiryBars": 1,
+          "testDecided": 36,
+          "testWins": 20
+        },
+        {
+          "fold": 6,
+          "trainCount": 312,
+          "bestExpiryBars": 1,
+          "testDecided": 62,
+          "testWins": 30
+        },
+        {
+          "fold": 7,
+          "trainCount": 375,
+          "bestExpiryBars": 1,
+          "testDecided": 43,
+          "testWins": 29
+        }
+      ]
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "setupType": null,
+      "totalOccurrences": 12478,
+      "trainValCount": 45387,
+      "testCount": 10792,
+      "bestExpiryBars": 30,
+      "testAccuracy": 0.5318754633061527,
+      "testWinCount": 5740,
+      "testDecidedCount": 10792,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 3.7080977316154386e-11,
+      "significant": true,
+      "wilsonLowerBound": 0.5224514294292274,
+      "passesWilsonGate": true,
+      "status": "ok",
+      "independentCount": 1024,
+      "independentTestDecided": 898,
+      "testAccuracyDeduped": 0.5211581291759465,
+      "pValueDeduped": 0.21691761668591292,
+      "independentTestWins": 468,
+      "wilsonLowerBoundDeduped": 0.4884638112412001,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5019345142137192,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 3465,
+          "testCount": 2944,
+          "testDecided": 2944,
+          "testAccuracy": 0.540421195652174
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 3170,
+          "testCount": 2686,
+          "testDecided": 2647,
+          "testAccuracy": 0.5545901020022668
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 2927,
+          "testCount": 2640,
+          "testDecided": 2640,
+          "testAccuracy": 0.5227272727272727
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 2916,
+          "testCount": 2571,
+          "testDecided": 2561,
+          "testAccuracy": 0.5080046856696603
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.5536374845869297,
+          "testAccuracy": 0.5125501539609966,
+          "testDecided": 10717
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.5905752753977969,
+          "testAccuracy": 0.5331537890044576,
+          "testDecided": 10768
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.6044226044226044,
+          "testAccuracy": 0.5318754633061527,
+          "testDecided": 10792
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 1637,
+          "bestExpiryBars": 30,
+          "testDecided": 1528,
+          "testWins": 699
+        },
+        {
+          "fold": 2,
+          "trainCount": 3155,
+          "bestExpiryBars": 30,
+          "testDecided": 1788,
+          "testWins": 982
+        },
+        {
+          "fold": 3,
+          "trainCount": 4968,
+          "bestExpiryBars": 30,
+          "testDecided": 1681,
+          "testWins": 945
+        },
+        {
+          "fold": 4,
+          "trainCount": 6653,
+          "bestExpiryBars": 30,
+          "testDecided": 1513,
+          "testWins": 840
+        },
+        {
+          "fold": 5,
+          "trainCount": 8170,
+          "bestExpiryBars": 30,
+          "testDecided": 1550,
+          "testWins": 802
+        },
+        {
+          "fold": 6,
+          "trainCount": 9710,
+          "bestExpiryBars": 30,
+          "testDecided": 1351,
+          "testWins": 699
+        },
+        {
+          "fold": 7,
+          "trainCount": 11094,
+          "bestExpiryBars": 30,
+          "testDecided": 1381,
+          "testWins": 773
+        }
+      ]
+    },
+    {
+      "patternName": "shooting-star",
+      "setupType": null,
+      "totalOccurrences": 1399,
+      "trainValCount": 3937,
+      "testCount": 1262,
+      "bestExpiryBars": 3,
+      "testAccuracy": 0.5095087163232963,
+      "testWinCount": 643,
+      "testDecidedCount": 1262,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.5173646337310833,
+      "significant": false,
+      "wilsonLowerBound": 0.4819402301882716,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 1205,
+      "independentTestDecided": 1082,
+      "testAccuracyDeduped": 0.512014787430684,
+      "pValueDeduped": 0.4472560349215395,
+      "independentTestWins": 554,
+      "wilsonLowerBoundDeduped": 0.4822407091410848,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.512014787430684,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 771,
+          "testCount": 732,
+          "testDecided": 682,
+          "testAccuracy": 0.5249266862170088
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 460,
+          "testCount": 447,
+          "testDecided": 439,
+          "testAccuracy": 0.5125284738041003
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 139,
+          "testCount": 139,
+          "testDecided": 138,
+          "testAccuracy": 0.5362318840579711
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 29,
+          "testCount": 29,
+          "testDecided": 29,
+          "testAccuracy": 0.5517241379310345
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.42857142857142855,
+          "testAccuracy": 0.5236886632825719,
+          "testDecided": 1182
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.5131683958499601,
+          "testDecided": 1253
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.45098039215686275,
+          "testAccuracy": 0.5225155279503105,
+          "testDecided": 1288
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4423076923076923,
+          "testAccuracy": 0.5142636854279106,
+          "testDecided": 1297
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 52,
+          "bestExpiryBars": 2,
+          "testDecided": 127,
+          "testWins": 60
+        },
+        {
+          "fold": 2,
+          "trainCount": 190,
+          "bestExpiryBars": 3,
+          "testDecided": 189,
+          "testWins": 87
+        },
+        {
+          "fold": 3,
+          "trainCount": 386,
+          "bestExpiryBars": 1,
+          "testDecided": 116,
+          "testWins": 57
+        },
+        {
+          "fold": 4,
+          "trainCount": 512,
+          "bestExpiryBars": 3,
+          "testDecided": 90,
+          "testWins": 54
+        },
+        {
+          "fold": 5,
+          "trainCount": 607,
+          "bestExpiryBars": 2,
+          "testDecided": 262,
+          "testWins": 145
+        },
+        {
+          "fold": 6,
+          "trainCount": 892,
+          "bestExpiryBars": 3,
+          "testDecided": 381,
+          "testWins": 191
+        },
+        {
+          "fold": 7,
+          "trainCount": 1298,
+          "bestExpiryBars": 1,
+          "testDecided": 97,
+          "testWins": 49
+        }
+      ]
+    },
+    {
+      "patternName": "bullish-harami",
+      "setupType": null,
+      "totalOccurrences": 80,
+      "trainValCount": 199,
+      "testCount": 45,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.5111111111111111,
+      "testWinCount": 23,
+      "testDecidedCount": 45,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.37004224326489743,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 27,
+          "testCount": 23,
+          "testDecided": 23,
+          "testAccuracy": 0.6521739130434783
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 26,
+          "testCount": 24,
+          "testDecided": 23,
+          "testAccuracy": 0.5217391304347826
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 18,
+          "testCount": 17,
+          "testDecided": 17,
+          "testAccuracy": 0.35294117647058826
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 9,
+          "testCount": 8,
+          "testDecided": 8,
+          "testAccuracy": 0.375
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.4166666666666667,
+          "testDecided": 72
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.625,
+          "testAccuracy": 0.4444444444444444,
+          "testDecided": 72
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.625,
+          "testAccuracy": 0.5070422535211268,
+          "testDecided": 71
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.375,
+          "testAccuracy": 0.4305555555555556,
+          "testDecided": 72
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 8,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 16,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 22,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 35,
+          "bestExpiryBars": 5,
+          "testDecided": 5,
+          "testWins": 3
+        },
+        {
+          "fold": 5,
+          "trainCount": 40,
+          "bestExpiryBars": 5,
+          "testDecided": 16,
+          "testWins": 6
+        },
+        {
+          "fold": 6,
+          "trainCount": 56,
+          "bestExpiryBars": 5,
+          "testDecided": 12,
+          "testWins": 6
+        },
+        {
+          "fold": 7,
+          "trainCount": 68,
+          "bestExpiryBars": 5,
+          "testDecided": 12,
+          "testWins": 8
+        }
+      ]
+    },
+    {
+      "patternName": "bearish-engulfing",
+      "setupType": null,
+      "totalOccurrences": 61,
+      "trainValCount": 181,
+      "testCount": 28,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.5,
+      "testWinCount": 14,
+      "testDecidedCount": 28,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.32632846832446344,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 18,
+          "testCount": 13,
+          "testDecided": 13,
+          "testAccuracy": 0.6153846153846154
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 17,
+          "testCount": 13,
+          "testDecided": 13,
+          "testAccuracy": 0.6923076923076923
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 13,
+          "testCount": 13,
+          "testDecided": 13,
+          "testAccuracy": 0.6153846153846154
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 13,
+          "testCount": 11,
+          "testDecided": 11,
+          "testAccuracy": 0.45454545454545453
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.45454545454545453,
+          "testAccuracy": 0.5102040816326531,
+          "testDecided": 49
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.45454545454545453,
+          "testAccuracy": 0.5102040816326531,
+          "testDecided": 49
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.5454545454545454,
+          "testAccuracy": 0.5510204081632653,
+          "testDecided": 49
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.45454545454545453,
+          "testAccuracy": 0.6,
+          "testDecided": 50
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 11,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 17,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 26,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 33,
+          "bestExpiryBars": 3,
+          "testDecided": 7,
+          "testWins": 4
+        },
+        {
+          "fold": 5,
+          "trainCount": 40,
+          "bestExpiryBars": 5,
+          "testDecided": 10,
+          "testWins": 2
+        },
+        {
+          "fold": 6,
+          "trainCount": 50,
+          "bestExpiryBars": 5,
+          "testDecided": 8,
+          "testWins": 5
+        },
+        {
+          "fold": 7,
+          "trainCount": 58,
+          "bestExpiryBars": 5,
+          "testDecided": 3,
+          "testWins": 3
+        }
+      ]
+    },
+    {
+      "patternName": "hammer",
+      "setupType": null,
+      "totalOccurrences": 73,
+      "trainValCount": 71,
+      "testCount": 2,
+      "bestExpiryBars": 2,
+      "testAccuracy": 0.5,
+      "testWinCount": 1,
+      "testDecidedCount": 2,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.09452865480086611,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 39,
+          "testCount": 39,
+          "testDecided": 36,
+          "testAccuracy": 0.6111111111111112
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 30,
+          "testCount": 30,
+          "testDecided": 24,
+          "testAccuracy": 0.5
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 3,
+          "testAccuracy": 0.3333333333333333
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 1,
+          "testAccuracy": 1
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5272727272727272,
+          "testDecided": 55
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5625,
+          "testDecided": 64
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5384615384615384,
+          "testDecided": 65
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5428571428571428,
+          "testDecided": 70
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 0,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 3,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 8,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 11,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 5,
+          "trainCount": 11,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 6,
+          "trainCount": 29,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 7,
+          "trainCount": 71,
+          "bestExpiryBars": 2,
+          "testDecided": 2,
+          "testWins": 1
+        }
+      ]
+    },
+    {
+      "patternName": "strong-order-block-reaction",
+      "setupType": null,
+      "totalOccurrences": 45471,
+      "trainValCount": 158319,
+      "testCount": 38238,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.4853810345729379,
+      "testWinCount": 18560,
+      "testDecidedCount": 38238,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 1.1124821674190044e-8,
+      "significant": false,
+      "wilsonLowerBound": 0.4803732729750277,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 7016,
+      "independentTestDecided": 5893,
+      "testAccuracyDeduped": 0.4927880536229425,
+      "pValueDeduped": 0.2738500750226534,
+      "independentTestWins": 2904,
+      "wilsonLowerBoundDeduped": 0.4800321491217986,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5000080483884665,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 11683,
+          "testCount": 10252,
+          "testDecided": 10237,
+          "testAccuracy": 0.4764091042297548
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 11466,
+          "testCount": 9972,
+          "testDecided": 9763,
+          "testAccuracy": 0.4931885690873707
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 11401,
+          "testCount": 10010,
+          "testDecided": 8783,
+          "testAccuracy": 0.5006262097233292
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 10921,
+          "testCount": 9496,
+          "testDecided": 9066,
+          "testAccuracy": 0.49249944848885946
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.49373209169054444,
+          "testAccuracy": 0.4902111020106211,
+          "testDecided": 37849
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.4862758987072782,
+          "testAccuracy": 0.48607634139417244,
+          "testDecided": 38747
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.48286219081272086,
+          "testAccuracy": 0.48633178469673244,
+          "testDecided": 38959
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4848804500703235,
+          "testAccuracy": 0.4847464544434241,
+          "testDecided": 39204
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.4986849026827985,
+          "testAccuracy": 0.480608326339615,
+          "testDecided": 39321
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.49921287388490465,
+          "testAccuracy": 0.4767928211108013,
+          "testDecided": 39449
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.4863636363636364,
+          "testAccuracy": 0.47513042597376287,
+          "testDecided": 39486
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 5730,
+          "bestExpiryBars": 20,
+          "testDecided": 5579,
+          "testWins": 2718
+        },
+        {
+          "fold": 2,
+          "trainCount": 11351,
+          "bestExpiryBars": 10,
+          "testDecided": 5341,
+          "testWins": 2426
+        },
+        {
+          "fold": 3,
+          "trainCount": 16734,
+          "bestExpiryBars": 1,
+          "testDecided": 5604,
+          "testWins": 2761
+        },
+        {
+          "fold": 4,
+          "trainCount": 22548,
+          "bestExpiryBars": 1,
+          "testDecided": 5784,
+          "testWins": 2832
+        },
+        {
+          "fold": 5,
+          "trainCount": 28504,
+          "bestExpiryBars": 1,
+          "testDecided": 5132,
+          "testWins": 2491
+        },
+        {
+          "fold": 6,
+          "trainCount": 34004,
+          "bestExpiryBars": 1,
+          "testDecided": 4972,
+          "testWins": 2477
+        },
+        {
+          "fold": 7,
+          "trainCount": 39448,
+          "bestExpiryBars": 1,
+          "testDecided": 5826,
+          "testWins": 2855
+        }
+      ]
+    },
+    {
+      "patternName": "inside-bar",
+      "setupType": null,
+      "totalOccurrences": 99438,
+      "trainValCount": 332370,
+      "testCount": 84716,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.4880896170735162,
+      "testWinCount": 41349,
+      "testDecidedCount": 84716,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 4.203645332050987e-12,
+      "significant": false,
+      "wilsonLowerBound": 0.48472418697449565,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 43827,
+      "independentTestDecided": 37015,
+      "testAccuracyDeduped": 0.4911792516547346,
+      "pValueDeduped": 0.0007015319630655584,
+      "independentTestWins": 18181,
+      "wilsonLowerBoundDeduped": 0.48608747892034526,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5000558747016138,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 28844,
+          "testCount": 25858,
+          "testDecided": 24529,
+          "testAccuracy": 0.4792694361775857
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 25605,
+          "testCount": 22740,
+          "testDecided": 22514,
+          "testAccuracy": 0.48871813094074795
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 22774,
+          "testCount": 20365,
+          "testDecided": 20306,
+          "testAccuracy": 0.47626317344627206
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 22215,
+          "testCount": 19837,
+          "testDecided": 19832,
+          "testAccuracy": 0.4802339653085922
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.4789005032907472,
+          "testAccuracy": 0.4891589144491719,
+          "testDecided": 83202
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.4700756487599349,
+          "testAccuracy": 0.4805552315408842,
+          "testDecided": 85730
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.47934200459066567,
+          "testAccuracy": 0.48375238425524536,
+          "testDecided": 86505
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4848513629024599,
+          "testAccuracy": 0.4812287080900655,
+          "testDecided": 87181
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 10629,
+          "bestExpiryBars": 5,
+          "testDecided": 11430,
+          "testWins": 5382
+        },
+        {
+          "fold": 2,
+          "trainCount": 22264,
+          "bestExpiryBars": 5,
+          "testDecided": 12579,
+          "testWins": 6136
+        },
+        {
+          "fold": 3,
+          "trainCount": 35083,
+          "bestExpiryBars": 5,
+          "testDecided": 11625,
+          "testWins": 5564
+        },
+        {
+          "fold": 4,
+          "trainCount": 46870,
+          "bestExpiryBars": 5,
+          "testDecided": 11161,
+          "testWins": 5304
+        },
+        {
+          "fold": 5,
+          "trainCount": 58190,
+          "bestExpiryBars": 1,
+          "testDecided": 12695,
+          "testWins": 6253
+        },
+        {
+          "fold": 6,
+          "trainCount": 71940,
+          "bestExpiryBars": 1,
+          "testDecided": 13686,
+          "testWins": 6986
+        },
+        {
+          "fold": 7,
+          "trainCount": 87394,
+          "bestExpiryBars": 1,
+          "testDecided": 11540,
+          "testWins": 5724
+        }
+      ]
+    },
+    {
+      "patternName": "bearish-harami",
+      "setupType": null,
+      "totalOccurrences": 81,
+      "trainValCount": 271,
+      "testCount": 45,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.4888888888888889,
+      "testWinCount": 22,
+      "testDecidedCount": 45,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.3495678935302451,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 28,
+          "testCount": 28,
+          "testDecided": 28,
+          "testAccuracy": 0.5714285714285714
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 22,
+          "testCount": 19,
+          "testDecided": 19,
+          "testAccuracy": 0.3684210526315789
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 16,
+          "testCount": 14,
+          "testDecided": 14,
+          "testAccuracy": 0.7857142857142857
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 15,
+          "testCount": 12,
+          "testDecided": 12,
+          "testAccuracy": 0.5833333333333334
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.5277777777777778,
+          "testDecided": 72
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.75,
+          "testAccuracy": 0.5,
+          "testDecided": 72
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.375,
+          "testAccuracy": 0.5616438356164384,
+          "testDecided": 73
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.875,
+          "testAccuracy": 0.4444444444444444,
+          "testDecided": 72
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 8,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 25,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 36,
+          "bestExpiryBars": 3,
+          "testDecided": 8,
+          "testWins": 2
+        },
+        {
+          "fold": 4,
+          "trainCount": 44,
+          "bestExpiryBars": 5,
+          "testDecided": 11,
+          "testWins": 7
+        },
+        {
+          "fold": 5,
+          "trainCount": 55,
+          "bestExpiryBars": 5,
+          "testDecided": 7,
+          "testWins": 4
+        },
+        {
+          "fold": 6,
+          "trainCount": 62,
+          "bestExpiryBars": 5,
+          "testDecided": 12,
+          "testWins": 7
+        },
+        {
+          "fold": 7,
+          "trainCount": 74,
+          "bestExpiryBars": 5,
+          "testDecided": 7,
+          "testWins": 2
+        }
+      ]
+    },
+    {
+      "patternName": "inverted-hammer",
+      "setupType": null,
+      "totalOccurrences": 78,
+      "trainValCount": 108,
+      "testCount": 45,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.4888888888888889,
+      "testWinCount": 22,
+      "testDecidedCount": 45,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.3495678935302451,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 40,
+          "testCount": 39,
+          "testDecided": 38,
+          "testAccuracy": 0.5263157894736842
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 30,
+          "testCount": 30,
+          "testDecided": 28,
+          "testAccuracy": 0.5714285714285714
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 4,
+          "testCount": 3,
+          "testDecided": 3,
+          "testAccuracy": 0.6666666666666666
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 4,
+          "testCount": 4,
+          "testDecided": 4,
+          "testAccuracy": 0.5
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.5344827586206896,
+          "testDecided": 58
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.582089552238806,
+          "testDecided": 67
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.5441176470588235,
+          "testDecided": 68
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.547945205479452,
+          "testDecided": 73
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 2,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 5,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 10,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 13,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 5,
+          "trainCount": 13,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 6,
+          "trainCount": 32,
+          "bestExpiryBars": 5,
+          "testDecided": 43,
+          "testWins": 21
+        },
+        {
+          "fold": 7,
+          "trainCount": 76,
+          "bestExpiryBars": 2,
+          "testDecided": 2,
+          "testWins": 1
+        }
+      ]
+    },
+    {
+      "patternName": "order-block-continuation",
+      "setupType": null,
+      "totalOccurrences": 12462,
+      "trainValCount": 42456,
+      "testCount": 10923,
+      "bestExpiryBars": 10,
+      "testAccuracy": 0.47761603954957427,
+      "testWinCount": 5217,
+      "testDecidedCount": 10923,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.0000030118487722803887,
+      "significant": false,
+      "wilsonLowerBound": 0.46825814390559045,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 4575,
+      "independentTestDecided": 4044,
+      "testAccuracyDeduped": 0.4824431256181998,
+      "pValueDeduped": 0.026594181816131154,
+      "independentTestWins": 1951,
+      "wilsonLowerBoundDeduped": 0.46706595841789084,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5002443448476257,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 3389,
+          "testCount": 3003,
+          "testDecided": 3002,
+          "testAccuracy": 0.472018654230513
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 3304,
+          "testCount": 2899,
+          "testDecided": 2880,
+          "testAccuracy": 0.49166666666666664
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 2975,
+          "testCount": 2633,
+          "testDecided": 2632,
+          "testAccuracy": 0.4844224924012158
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 2794,
+          "testCount": 2490,
+          "testDecided": 2413,
+          "testAccuracy": 0.4749274761707418
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.49576868829337095,
+          "testAccuracy": 0.47225794598566967,
+          "testDecided": 10886
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.47549019607843135,
+          "testAccuracy": 0.4808273085018761,
+          "testDecided": 10927
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.4709587123862841,
+          "testAccuracy": 0.47748652845008677,
+          "testDecided": 10949
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.4727653631284916,
+          "testAccuracy": 0.4836297309621523,
+          "testDecided": 10965
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 1433,
+          "bestExpiryBars": 5,
+          "testDecided": 1413,
+          "testWins": 656
+        },
+        {
+          "fold": 2,
+          "trainCount": 2865,
+          "bestExpiryBars": 10,
+          "testDecided": 1498,
+          "testWins": 729
+        },
+        {
+          "fold": 3,
+          "trainCount": 4377,
+          "bestExpiryBars": 10,
+          "testDecided": 1606,
+          "testWins": 774
+        },
+        {
+          "fold": 4,
+          "trainCount": 5992,
+          "bestExpiryBars": 10,
+          "testDecided": 1683,
+          "testWins": 798
+        },
+        {
+          "fold": 5,
+          "trainCount": 7687,
+          "bestExpiryBars": 10,
+          "testDecided": 1496,
+          "testWins": 705
+        },
+        {
+          "fold": 6,
+          "trainCount": 9200,
+          "bestExpiryBars": 10,
+          "testDecided": 1684,
+          "testWins": 814
+        },
+        {
+          "fold": 7,
+          "trainCount": 10902,
+          "bestExpiryBars": 10,
+          "testDecided": 1543,
+          "testWins": 741
+        }
+      ]
+    },
+    {
+      "patternName": "marubozu-bearish",
+      "setupType": null,
+      "totalOccurrences": 548,
+      "trainValCount": 1642,
+      "testCount": 507,
+      "bestExpiryBars": 2,
+      "testAccuracy": 0.47928994082840237,
+      "testWinCount": 243,
+      "testDecidedCount": 507,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.3744331936133403,
+      "significant": false,
+      "wilsonLowerBound": 0.4361232452056051,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 436,
+      "independentTestDecided": 367,
+      "testAccuracyDeduped": 0.4822888283378747,
+      "pValueDeduped": 0.5311129992081564,
+      "independentTestWins": 177,
+      "wilsonLowerBoundDeduped": 0.4316139769027017,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.4822888283378747,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 195,
+          "testCount": 185,
+          "testDecided": 181,
+          "testAccuracy": 0.5082872928176796
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 150,
+          "testCount": 139,
+          "testDecided": 139,
+          "testAccuracy": 0.5035971223021583
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 109,
+          "testCount": 105,
+          "testDecided": 100,
+          "testAccuracy": 0.5
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 94,
+          "testCount": 89,
+          "testDecided": 89,
+          "testAccuracy": 0.47191011235955055
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.5517241379310345,
+          "testAccuracy": 0.462,
+          "testDecided": 500
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.6,
+          "testAccuracy": 0.49901768172888017,
+          "testDecided": 509
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.6206896551724138,
+          "testAccuracy": 0.5009746588693957,
+          "testDecided": 513
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 30,
+          "bestExpiryBars": 3,
+          "testDecided": 49,
+          "testWins": 29
+        },
+        {
+          "fold": 2,
+          "trainCount": 79,
+          "bestExpiryBars": 2,
+          "testDecided": 76,
+          "testWins": 38
+        },
+        {
+          "fold": 3,
+          "trainCount": 156,
+          "bestExpiryBars": 2,
+          "testDecided": 63,
+          "testWins": 26
+        },
+        {
+          "fold": 4,
+          "trainCount": 219,
+          "bestExpiryBars": 1,
+          "testDecided": 75,
+          "testWins": 30
+        },
+        {
+          "fold": 5,
+          "trainCount": 296,
+          "bestExpiryBars": 1,
+          "testDecided": 80,
+          "testWins": 36
+        },
+        {
+          "fold": 6,
+          "trainCount": 382,
+          "bestExpiryBars": 2,
+          "testDecided": 96,
+          "testWins": 47
+        },
+        {
+          "fold": 7,
+          "trainCount": 480,
+          "bestExpiryBars": 2,
+          "testDecided": 68,
+          "testWins": 37
+        }
+      ]
+    },
+    {
+      "patternName": "order-block-nested",
+      "setupType": null,
+      "totalOccurrences": 2620,
+      "trainValCount": 8944,
+      "testCount": 2301,
+      "bestExpiryBars": 30,
+      "testAccuracy": 0.49934810951760106,
+      "testWinCount": 1149,
+      "testDecidedCount": 2301,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.966743983068994,
+      "significant": false,
+      "wilsonLowerBound": 0.47893627456745735,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 1011,
+      "independentTestDecided": 895,
+      "testAccuracyDeduped": 0.4770949720670391,
+      "pValueDeduped": 0.18117351325707062,
+      "independentTestWins": 427,
+      "wilsonLowerBoundDeduped": 0.44453932695989457,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5014887175805999,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "no-evidence",
+      "verdictNote": "not distinguishable from baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 719,
+          "testCount": 644,
+          "testDecided": 644,
+          "testAccuracy": 0.5124223602484472
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 665,
+          "testCount": 605,
+          "testDecided": 605,
+          "testAccuracy": 0.49421487603305786
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 623,
+          "testCount": 568,
+          "testDecided": 567,
+          "testAccuracy": 0.5291005291005291
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 613,
+          "testCount": 495,
+          "testDecided": 487,
+          "testAccuracy": 0.4681724845995893
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.5374592833876222,
+          "testAccuracy": 0.49934354485776805,
+          "testDecided": 2285
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.5409836065573771,
+          "testAccuracy": 0.48974247053688347,
+          "testDecided": 2291
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.5751633986928104,
+          "testAccuracy": 0.5,
+          "testDecided": 2298
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.5863192182410424,
+          "testAccuracy": 0.5023881893182806,
+          "testDecided": 2303
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 308,
+          "bestExpiryBars": 30,
+          "testDecided": 240,
+          "testWins": 123
+        },
+        {
+          "fold": 2,
+          "trainCount": 548,
+          "bestExpiryBars": 30,
+          "testDecided": 407,
+          "testWins": 193
+        },
+        {
+          "fold": 3,
+          "trainCount": 958,
+          "bestExpiryBars": 30,
+          "testDecided": 278,
+          "testWins": 150
+        },
+        {
+          "fold": 4,
+          "trainCount": 1239,
+          "bestExpiryBars": 30,
+          "testDecided": 412,
+          "testWins": 217
+        },
+        {
+          "fold": 5,
+          "trainCount": 1650,
+          "bestExpiryBars": 30,
+          "testDecided": 326,
+          "testWins": 162
+        },
+        {
+          "fold": 6,
+          "trainCount": 1979,
+          "bestExpiryBars": 20,
+          "testDecided": 281,
+          "testWins": 129
+        },
+        {
+          "fold": 7,
+          "trainCount": 2262,
+          "bestExpiryBars": 30,
+          "testDecided": 357,
+          "testWins": 175
+        }
+      ]
+    },
+    {
+      "patternName": "fvg-breaker-block",
+      "setupType": null,
+      "totalOccurrences": 2847,
+      "trainValCount": 9857,
+      "testCount": 2464,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.4679383116883117,
+      "testWinCount": 1153,
+      "testDecidedCount": 2464,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.001557132592960259,
+      "significant": false,
+      "wilsonLowerBound": 0.4483014665954961,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 2022,
+      "independentTestDecided": 1761,
+      "testAccuracyDeduped": 0.47586598523566154,
+      "pValueDeduped": 0.045286038063830185,
+      "independentTestWins": 838,
+      "wilsonLowerBoundDeduped": 0.4526178806814144,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.499995969199525,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 790,
+          "testCount": 692,
+          "testDecided": 685,
+          "testAccuracy": 0.5021897810218978
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 757,
+          "testCount": 667,
+          "testDecided": 646,
+          "testAccuracy": 0.4628482972136223
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 667,
+          "testCount": 585,
+          "testDecided": 585,
+          "testAccuracy": 0.4547008547008547
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 633,
+          "testCount": 549,
+          "testDecided": 548,
+          "testAccuracy": 0.44525547445255476
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4586894586894587,
+          "testAccuracy": 0.4679383116883117,
+          "testDecided": 2464
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.44412607449856734,
+          "testAccuracy": 0.46132037262049413,
+          "testDecided": 2469
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.4375,
+          "testAccuracy": 0.4562753036437247,
+          "testDecided": 2470
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.4378531073446328,
+          "testAccuracy": 0.4568548387096774,
+          "testDecided": 2480
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 354,
+          "bestExpiryBars": 5,
+          "testDecided": 327,
+          "testWins": 148
+        },
+        {
+          "fold": 2,
+          "trainCount": 684,
+          "bestExpiryBars": 5,
+          "testDecided": 347,
+          "testWins": 155
+        },
+        {
+          "fold": 3,
+          "trainCount": 1034,
+          "bestExpiryBars": 5,
+          "testDecided": 366,
+          "testWins": 173
+        },
+        {
+          "fold": 4,
+          "trainCount": 1407,
+          "bestExpiryBars": 5,
+          "testDecided": 345,
+          "testWins": 162
+        },
+        {
+          "fold": 5,
+          "trainCount": 1754,
+          "bestExpiryBars": 5,
+          "testDecided": 354,
+          "testWins": 159
+        },
+        {
+          "fold": 6,
+          "trainCount": 2110,
+          "bestExpiryBars": 5,
+          "testDecided": 394,
+          "testWins": 200
+        },
+        {
+          "fold": 7,
+          "trainCount": 2514,
+          "bestExpiryBars": 5,
+          "testDecided": 331,
+          "testWins": 156
+        }
+      ]
+    },
+    {
+      "patternName": "fvg-nested",
+      "setupType": null,
+      "totalOccurrences": 21500,
+      "trainValCount": 75522,
+      "testCount": 18799,
+      "bestExpiryBars": 5,
+      "testAccuracy": 0.4692270865471568,
+      "testWinCount": 8821,
+      "testDecidedCount": 18799,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 3.344933245216538e-17,
+      "significant": false,
+      "wilsonLowerBound": 0.46210007505993267,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 3742,
+      "independentTestDecided": 3300,
+      "testAccuracyDeduped": 0.473030303030303,
+      "pValueDeduped": 0.002057281103389556,
+      "independentTestWins": 1561,
+      "wilsonLowerBoundDeduped": 0.4560367651669896,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.49982148760330575,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 5888,
+          "testCount": 5253,
+          "testDecided": 5006,
+          "testAccuracy": 0.4788254095085897
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 5421,
+          "testCount": 4768,
+          "testDecided": 4721,
+          "testAccuracy": 0.47045117559839017
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 5162,
+          "testCount": 4603,
+          "testDecided": 4566,
+          "testAccuracy": 0.46254927726675427
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 5029,
+          "testCount": 4492,
+          "testDecided": 4491,
+          "testAccuracy": 0.4874192830104654
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4887568943572338,
+          "testAccuracy": 0.4748189948892675,
+          "testDecided": 18784
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.46312387411253575,
+          "testDecided": 18874
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.4457118715673849,
+          "testAccuracy": 0.4657245306897279,
+          "testDecided": 18964
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.43513058129738835,
+          "testAccuracy": 0.46824894514767934,
+          "testDecided": 18960
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 2384,
+          "bestExpiryBars": 10,
+          "testDecided": 3111,
+          "testWins": 1291
+        },
+        {
+          "fold": 2,
+          "trainCount": 5535,
+          "bestExpiryBars": 5,
+          "testDecided": 2867,
+          "testWins": 1366
+        },
+        {
+          "fold": 3,
+          "trainCount": 8443,
+          "bestExpiryBars": 5,
+          "testDecided": 2030,
+          "testWins": 926
+        },
+        {
+          "fold": 4,
+          "trainCount": 10497,
+          "bestExpiryBars": 5,
+          "testDecided": 2537,
+          "testWins": 1197
+        },
+        {
+          "fold": 5,
+          "trainCount": 13061,
+          "bestExpiryBars": 5,
+          "testDecided": 3002,
+          "testWins": 1446
+        },
+        {
+          "fold": 6,
+          "trainCount": 16119,
+          "bestExpiryBars": 5,
+          "testDecided": 3251,
+          "testWins": 1647
+        },
+        {
+          "fold": 7,
+          "trainCount": 19483,
+          "bestExpiryBars": 5,
+          "testDecided": 2001,
+          "testWins": 948
+        }
+      ]
+    },
+    {
+      "patternName": "fvg-return",
+      "setupType": null,
+      "totalOccurrences": 76813,
+      "trainValCount": 268710,
+      "testCount": 64167,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.4758988264996026,
+      "testWinCount": 30537,
+      "testDecidedCount": 64167,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 2.7953576021548085e-34,
+      "significant": false,
+      "wilsonLowerBound": 0.47203613586677107,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 8030,
+      "independentTestDecided": 6793,
+      "testAccuracyDeduped": 0.47283968791402914,
+      "pValueDeduped": 0.000007969839390368316,
+      "independentTestWins": 3212,
+      "wilsonLowerBoundDeduped": 0.4609855731969536,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5000087008627984,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 19796,
+          "testCount": 17411,
+          "testDecided": 17358,
+          "testAccuracy": 0.47626454660675194
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 19789,
+          "testCount": 17386,
+          "testDecided": 16558,
+          "testAccuracy": 0.48435801425292907
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 18636,
+          "testCount": 16239,
+          "testDecided": 15828,
+          "testAccuracy": 0.4681576952236543
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 18592,
+          "testCount": 16350,
+          "testDecided": 14423,
+          "testAccuracy": 0.4742425292934896
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.48306284718440257,
+          "testAccuracy": 0.4758988264996026,
+          "testDecided": 64167
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.4697885196374622,
+          "testAccuracy": 0.4704602179338893,
+          "testDecided": 65708
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.4676622260421143,
+          "testAccuracy": 0.4678821412913662,
+          "testDecided": 66147
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4665596575708935,
+          "testAccuracy": 0.46377465805985646,
+          "testDecided": 66459
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.4563220845792396,
+          "testAccuracy": 0.4537249434024498,
+          "testDecided": 66699
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.44787891707525046,
+          "testAccuracy": 0.45471664275466284,
+          "testDecided": 66912
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.4383517887563884,
+          "testAccuracy": 0.4594344549727673,
+          "testDecided": 67015
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 9421,
+          "bestExpiryBars": 1,
+          "testDecided": 9296,
+          "testWins": 4325
+        },
+        {
+          "fold": 2,
+          "trainCount": 19094,
+          "bestExpiryBars": 1,
+          "testDecided": 9035,
+          "testWins": 4251
+        },
+        {
+          "fold": 3,
+          "trainCount": 28656,
+          "bestExpiryBars": 1,
+          "testDecided": 9081,
+          "testWins": 4375
+        },
+        {
+          "fold": 4,
+          "trainCount": 38074,
+          "bestExpiryBars": 1,
+          "testDecided": 9425,
+          "testWins": 4440
+        },
+        {
+          "fold": 5,
+          "trainCount": 47782,
+          "bestExpiryBars": 1,
+          "testDecided": 9322,
+          "testWins": 4375
+        },
+        {
+          "fold": 6,
+          "trainCount": 57683,
+          "bestExpiryBars": 1,
+          "testDecided": 9486,
+          "testWins": 4636
+        },
+        {
+          "fold": 7,
+          "trainCount": 68000,
+          "bestExpiryBars": 1,
+          "testDecided": 8522,
+          "testWins": 4135
+        }
+      ]
+    },
+    {
+      "patternName": "consolidation-breakout",
+      "setupType": null,
+      "totalOccurrences": 4313,
+      "trainValCount": 13071,
+      "testCount": 3794,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.4694254085397997,
+      "testWinCount": 1781,
+      "testDecidedCount": 3794,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.00017588191601479252,
+      "significant": false,
+      "wilsonLowerBound": 0.4535838479450018,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 2932,
+      "independentTestDecided": 2579,
+      "testAccuracyDeduped": 0.46956184567661885,
+      "pValueDeduped": 0.0021214525559491095,
+      "independentTestWins": 1211,
+      "wilsonLowerBoundDeduped": 0.4503597138861371,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5005846277408983,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 1281,
+          "testCount": 1203,
+          "testDecided": 1195,
+          "testAccuracy": 0.4702928870292887
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1160,
+          "testCount": 1062,
+          "testDecided": 999,
+          "testAccuracy": 0.48348348348348347
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 948,
+          "testCount": 865,
+          "testDecided": 850,
+          "testAccuracy": 0.47058823529411764
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 924,
+          "testCount": 845,
+          "testDecided": 750,
+          "testAccuracy": 0.448
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.5487804878048781,
+          "testAccuracy": 0.4694254085397997,
+          "testDecided": 3794
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.4835820895522388,
+          "testAccuracy": 0.4480719794344473,
+          "testDecided": 3890
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.4881656804733728,
+          "testAccuracy": 0.45470783363102835,
+          "testDecided": 3919
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.47604790419161674,
+          "testAccuracy": 0.4534319979586629,
+          "testDecided": 3919
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 338,
+          "bestExpiryBars": 1,
+          "testDecided": 467,
+          "testWins": 229
+        },
+        {
+          "fold": 2,
+          "trainCount": 816,
+          "bestExpiryBars": 1,
+          "testDecided": 501,
+          "testWins": 244
+        },
+        {
+          "fold": 3,
+          "trainCount": 1337,
+          "bestExpiryBars": 1,
+          "testDecided": 400,
+          "testWins": 164
+        },
+        {
+          "fold": 4,
+          "trainCount": 1744,
+          "bestExpiryBars": 1,
+          "testDecided": 460,
+          "testWins": 208
+        },
+        {
+          "fold": 5,
+          "trainCount": 2210,
+          "bestExpiryBars": 1,
+          "testDecided": 579,
+          "testWins": 262
+        },
+        {
+          "fold": 6,
+          "trainCount": 2828,
+          "bestExpiryBars": 1,
+          "testDecided": 893,
+          "testWins": 417
+        },
+        {
+          "fold": 7,
+          "trainCount": 3798,
+          "bestExpiryBars": 1,
+          "testDecided": 494,
+          "testWins": 257
+        }
+      ]
+    },
+    {
+      "patternName": "order-block-breaker",
+      "setupType": null,
+      "totalOccurrences": 4903,
+      "trainValCount": 17238,
+      "testCount": 4214,
+      "bestExpiryBars": 30,
+      "testAccuracy": 0.4603701945894637,
+      "testWinCount": 1940,
+      "testDecidedCount": 4214,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 2.861728459938073e-7,
+      "significant": false,
+      "wilsonLowerBound": 0.44536400640731055,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 2938,
+      "independentTestDecided": 2555,
+      "testAccuracyDeduped": 0.46771037181996084,
+      "pValueDeduped": 0.0011723869858206023,
+      "independentTestWins": 1195,
+      "wilsonLowerBoundDeduped": 0.44842589348402506,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5000889242918034,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 1320,
+          "testCount": 1138,
+          "testDecided": 1122,
+          "testAccuracy": 0.47771836007130125
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 1271,
+          "testCount": 1087,
+          "testDecided": 1086,
+          "testAccuracy": 0.4539594843462247
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 1197,
+          "testCount": 1040,
+          "testDecided": 1040,
+          "testAccuracy": 0.43846153846153846
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1115,
+          "testCount": 968,
+          "testDecided": 966,
+          "testAccuracy": 0.47101449275362317
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.4186746987951807,
+          "testAccuracy": 0.45557156580211333,
+          "testDecided": 4164
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0.4161676646706587,
+          "testAccuracy": 0.4524660471765547,
+          "testDecided": 4197
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0.42750373692077726,
+          "testAccuracy": 0.46243461721350454,
+          "testDecided": 4206
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0.4542728635682159,
+          "testAccuracy": 0.4603701945894637,
+          "testDecided": 4214
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 670,
+          "bestExpiryBars": 30,
+          "testDecided": 590,
+          "testWins": 264
+        },
+        {
+          "fold": 2,
+          "trainCount": 1260,
+          "bestExpiryBars": 30,
+          "testDecided": 541,
+          "testWins": 249
+        },
+        {
+          "fold": 3,
+          "trainCount": 1803,
+          "bestExpiryBars": 30,
+          "testDecided": 662,
+          "testWins": 305
+        },
+        {
+          "fold": 4,
+          "trainCount": 2468,
+          "bestExpiryBars": 30,
+          "testDecided": 683,
+          "testWins": 317
+        },
+        {
+          "fold": 5,
+          "trainCount": 3153,
+          "bestExpiryBars": 30,
+          "testDecided": 522,
+          "testWins": 236
+        },
+        {
+          "fold": 6,
+          "trainCount": 3683,
+          "bestExpiryBars": 30,
+          "testDecided": 516,
+          "testWins": 246
+        },
+        {
+          "fold": 7,
+          "trainCount": 4201,
+          "bestExpiryBars": 30,
+          "testDecided": 700,
+          "testWins": 323
+        }
+      ]
+    },
+    {
+      "patternName": "bullish-engulfing",
+      "setupType": null,
+      "totalOccurrences": 61,
+      "trainValCount": 168,
+      "testCount": 28,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.4642857142857143,
+      "testWinCount": 13,
+      "testDecidedCount": 28,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.2953130373965958,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 18,
+          "testCount": 18,
+          "testDecided": 18,
+          "testAccuracy": 0.5555555555555556
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 16,
+          "testCount": 15,
+          "testDecided": 15,
+          "testAccuracy": 0.4666666666666667
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 16,
+          "testCount": 16,
+          "testDecided": 16,
+          "testAccuracy": 0.375
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 11,
+          "testCount": 10,
+          "testDecided": 10,
+          "testAccuracy": 0.3
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.5,
+          "testAccuracy": 0.4406779661016949,
+          "testDecided": 59
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.3898305084745763,
+          "testDecided": 59
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.3620689655172414,
+          "testDecided": 58
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.3793103448275862,
+          "testDecided": 58
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 2,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 15,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 24,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 33,
+          "bestExpiryBars": 1,
+          "testDecided": 4,
+          "testWins": 2
+        },
+        {
+          "fold": 5,
+          "trainCount": 37,
+          "bestExpiryBars": 1,
+          "testDecided": 6,
+          "testWins": 3
+        },
+        {
+          "fold": 6,
+          "trainCount": 43,
+          "bestExpiryBars": 1,
+          "testDecided": 12,
+          "testWins": 8
+        },
+        {
+          "fold": 7,
+          "trainCount": 55,
+          "bestExpiryBars": 1,
+          "testDecided": 6,
+          "testWins": 0
+        }
+      ]
+    },
+    {
+      "patternName": "impulse-breakout",
+      "setupType": null,
+      "totalOccurrences": 22441,
+      "trainValCount": 76039,
+      "testCount": 19387,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.45133336772063753,
+      "testWinCount": 8750,
+      "testDecidedCount": 19387,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 7.311946667677848e-42,
+      "significant": false,
+      "wilsonLowerBound": 0.4443387671635403,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 10818,
+      "independentTestDecided": 9412,
+      "testAccuracyDeduped": 0.45898852528686784,
+      "pValueDeduped": 1.841609915829878e-15,
+      "independentTestWins": 4320,
+      "wilsonLowerBoundDeduped": 0.44893985274633746,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.49993599421595425,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 6065,
+          "testCount": 5386,
+          "testDecided": 5245,
+          "testAccuracy": 0.46768350810295517
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 5632,
+          "testCount": 5008,
+          "testDecided": 5004,
+          "testAccuracy": 0.44684252597921664
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 5494,
+          "testCount": 4891,
+          "testDecided": 4530,
+          "testAccuracy": 0.44900662251655626
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 5250,
+          "testCount": 4638,
+          "testDecided": 4608,
+          "testAccuracy": 0.4398871527777778
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.45102781136638453,
+          "testAccuracy": 0.45133336772063753,
+          "testDecided": 19387
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.44715772618094474,
+          "testAccuracy": 0.4445806517519665,
+          "testDecided": 19578
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.43298555377207065,
+          "testAccuracy": 0.4455067894014138,
+          "testDecided": 19663
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 2518,
+          "bestExpiryBars": 1,
+          "testDecided": 2553,
+          "testWins": 1193
+        },
+        {
+          "fold": 2,
+          "trainCount": 5136,
+          "bestExpiryBars": 1,
+          "testDecided": 2815,
+          "testWins": 1280
+        },
+        {
+          "fold": 3,
+          "trainCount": 8019,
+          "bestExpiryBars": 1,
+          "testDecided": 2532,
+          "testWins": 1112
+        },
+        {
+          "fold": 4,
+          "trainCount": 10606,
+          "bestExpiryBars": 1,
+          "testDecided": 2859,
+          "testWins": 1182
+        },
+        {
+          "fold": 5,
+          "trainCount": 13503,
+          "bestExpiryBars": 1,
+          "testDecided": 2840,
+          "testWins": 1252
+        },
+        {
+          "fold": 6,
+          "trainCount": 16446,
+          "bestExpiryBars": 1,
+          "testDecided": 3220,
+          "testWins": 1509
+        },
+        {
+          "fold": 7,
+          "trainCount": 19811,
+          "bestExpiryBars": 1,
+          "testDecided": 2568,
+          "testWins": 1222
+        }
+      ]
+    },
+    {
+      "patternName": "pin-bar",
+      "setupType": null,
+      "totalOccurrences": 397,
+      "trainValCount": 1299,
+      "testCount": 356,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.4410112359550562,
+      "testWinCount": 157,
+      "testDecidedCount": 356,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.029637859259512483,
+      "significant": false,
+      "wilsonLowerBound": 0.3903360145856034,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 340,
+      "independentTestDecided": 305,
+      "testAccuracyDeduped": 0.4360655737704918,
+      "pValueDeduped": 0.02939825163126112,
+      "independentTestWins": 133,
+      "wilsonLowerBoundDeduped": 0.3815483394809112,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.5038968019349637,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 103,
+          "testCount": 91,
+          "testDecided": 91,
+          "testAccuracy": 0.4945054945054945
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 102,
+          "testCount": 96,
+          "testDecided": 96,
+          "testAccuracy": 0.4375
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 97,
+          "testCount": 93,
+          "testDecided": 93,
+          "testAccuracy": 0.4838709677419355
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 95,
+          "testCount": 82,
+          "testDecided": 76,
+          "testAccuracy": 0.40789473684210525
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.47058823529411764,
+          "testAccuracy": 0.45786516853932585,
+          "testDecided": 356
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.42857142857142855,
+          "testAccuracy": 0.46368715083798884,
+          "testDecided": 358
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.4,
+          "testAccuracy": 0.4444444444444444,
+          "testDecided": 360
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0.3142857142857143,
+          "testAccuracy": 0.4305555555555556,
+          "testDecided": 360
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 35,
+          "bestExpiryBars": 1,
+          "testDecided": 42,
+          "testWins": 19
+        },
+        {
+          "fold": 2,
+          "trainCount": 77,
+          "bestExpiryBars": 1,
+          "testDecided": 65,
+          "testWins": 27
+        },
+        {
+          "fold": 3,
+          "trainCount": 144,
+          "bestExpiryBars": 2,
+          "testDecided": 41,
+          "testWins": 14
+        },
+        {
+          "fold": 4,
+          "trainCount": 185,
+          "bestExpiryBars": 2,
+          "testDecided": 50,
+          "testWins": 21
+        },
+        {
+          "fold": 5,
+          "trainCount": 235,
+          "bestExpiryBars": 2,
+          "testDecided": 47,
+          "testWins": 24
+        },
+        {
+          "fold": 6,
+          "trainCount": 284,
+          "bestExpiryBars": 1,
+          "testDecided": 54,
+          "testWins": 30
+        },
+        {
+          "fold": 7,
+          "trainCount": 339,
+          "bestExpiryBars": 1,
+          "testDecided": 57,
+          "testWins": 22
+        }
+      ]
+    },
+    {
+      "patternName": "marubozu-bullish",
+      "setupType": null,
+      "totalOccurrences": 586,
+      "trainValCount": 1999,
+      "testCount": 540,
+      "bestExpiryBars": 1,
+      "testAccuracy": 0.44074074074074077,
+      "testWinCount": 238,
+      "testDecidedCount": 540,
+      "baselineMean": 0.5,
+      "baselineStd": null,
+      "pValue": 0.006652480639753798,
+      "significant": false,
+      "wilsonLowerBound": 0.39943015274519894,
+      "passesWilsonGate": false,
+      "status": "ok",
+      "independentCount": 468,
+      "independentTestDecided": 428,
+      "testAccuracyDeduped": 0.411214953271028,
+      "pValueDeduped": 0.00027913789184752134,
+      "independentTestWins": 176,
+      "wilsonLowerBoundDeduped": 0.3655885754657837,
+      "passesWilsonGateDeduped": false,
+      "driftBaseline": 0.411214953271028,
+      "requiredWinRate": 0.5555555555555556,
+      "passesBreakevenGate": false,
+      "significantDeduped": false,
+      "verdict": "rejected",
+      "verdictNote": "significant below baseline (deduplicated)",
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 225,
+          "testCount": 207,
+          "testDecided": 202,
+          "testAccuracy": 0.504950495049505
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 138,
+          "testCount": 131,
+          "testDecided": 131,
+          "testAccuracy": 0.45038167938931295
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 134,
+          "testCount": 126,
+          "testDecided": 121,
+          "testAccuracy": 0.45454545454545453
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 89,
+          "testCount": 83,
+          "testDecided": 83,
+          "testAccuracy": 0.40963855421686746
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.3684210526315789,
+          "testAccuracy": 0.4655493482309125,
+          "testDecided": 537
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.4358974358974359,
+          "testAccuracy": 0.44341372912801486,
+          "testDecided": 539
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.5128205128205128,
+          "testAccuracy": 0.40370370370370373,
+          "testDecided": 540
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 39,
+          "bestExpiryBars": 3,
+          "testDecided": 80,
+          "testWins": 32
+        },
+        {
+          "fold": 2,
+          "trainCount": 119,
+          "bestExpiryBars": 1,
+          "testDecided": 113,
+          "testWins": 51
+        },
+        {
+          "fold": 3,
+          "trainCount": 233,
+          "bestExpiryBars": 2,
+          "testDecided": 81,
+          "testWins": 32
+        },
+        {
+          "fold": 4,
+          "trainCount": 315,
+          "bestExpiryBars": 1,
+          "testDecided": 47,
+          "testWins": 14
+        },
+        {
+          "fold": 5,
+          "trainCount": 362,
+          "bestExpiryBars": 1,
+          "testDecided": 42,
+          "testWins": 19
+        },
+        {
+          "fold": 6,
+          "trainCount": 405,
+          "bestExpiryBars": 1,
+          "testDecided": 118,
+          "testWins": 63
+        },
+        {
+          "fold": 7,
+          "trainCount": 526,
+          "bestExpiryBars": 1,
+          "testDecided": 59,
+          "testWins": 27
+        }
+      ]
+    },
+    {
+      "patternName": "liquidity-sweep-reaction",
+      "setupType": "reversal-at-key-level",
+      "totalOccurrences": 55,
+      "trainValCount": 82,
+      "testCount": 18,
+      "bestExpiryBars": 3,
+      "testAccuracy": 0.3888888888888889,
+      "testWinCount": 7,
+      "testDecidedCount": 18,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.2030499192693116,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 18,
+          "testCount": 15,
+          "testDecided": 15,
+          "testAccuracy": 0.5333333333333333
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 15,
+          "testCount": 12,
+          "testDecided": 12,
+          "testAccuracy": 0.25
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 11,
+          "testCount": 11,
+          "testDecided": 11,
+          "testAccuracy": 0.45454545454545453
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 11,
+          "testCount": 10,
+          "testDecided": 10,
+          "testAccuracy": 0.3
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.2,
+          "testAccuracy": 0.391304347826087,
+          "testDecided": 46
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.2857142857142857,
+          "testAccuracy": 0.3617021276595745,
+          "testDecided": 47
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.42857142857142855,
+          "testAccuracy": 0.3958333333333333,
+          "testDecided": 48
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 7,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 14,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 19,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 26,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 5,
+          "trainCount": 29,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 6,
+          "trainCount": 36,
+          "bestExpiryBars": 3,
+          "testDecided": 10,
+          "testWins": 5
+        },
+        {
+          "fold": 7,
+          "trainCount": 46,
+          "bestExpiryBars": 1,
+          "testDecided": 8,
+          "testWins": 2
+        }
+      ]
+    },
+    {
+      "patternName": "hanging-man",
+      "setupType": null,
+      "totalOccurrences": 58,
+      "trainValCount": 54,
+      "testCount": 4,
+      "bestExpiryBars": 2,
+      "testAccuracy": 0.25,
+      "testWinCount": 1,
+      "testDecidedCount": 4,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": 0.045586062644636216,
+      "passesWilsonGate": false,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 35,
+          "testCount": 35,
+          "testDecided": 34,
+          "testAccuracy": 0.5882352941176471
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 19,
+          "testCount": 19,
+          "testDecided": 19,
+          "testAccuracy": 0.631578947368421
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 3,
+          "testAccuracy": 0.6666666666666666
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 1,
+          "testAccuracy": 0
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5111111111111111,
+          "testDecided": 45
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5964912280701754,
+          "testDecided": 57
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5925925925925926,
+          "testDecided": 54
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5454545454545454,
+          "testDecided": 55
+        }
+      ],
+      "perFold": [
+        {
+          "fold": 1,
+          "trainCount": 0,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 2,
+          "trainCount": 3,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 3,
+          "trainCount": 8,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 4,
+          "trainCount": 10,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 5,
+          "trainCount": 11,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 6,
+          "trainCount": 22,
+          "bestExpiryBars": null,
+          "testDecided": 0,
+          "testWins": 0
+        },
+        {
+          "fold": 7,
+          "trainCount": 54,
+          "bestExpiryBars": 2,
+          "testDecided": 4,
+          "testWins": 1
+        }
+      ]
+    },
+    {
+      "patternName": "piercing-line",
+      "setupType": null,
+      "totalOccurrences": 12,
+      "trainValCount": 4,
+      "testCount": 8,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 6,
+          "testCount": 4,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 3,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 3,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0.75,
+          "testAccuracy": 0.375,
+          "testDecided": 8
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0.75,
+          "testAccuracy": 0.5,
+          "testDecided": 8
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0.75,
+          "testAccuracy": 0.5,
+          "testDecided": 8
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.625,
+          "testDecided": 8
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "three-black-crows",
+      "setupType": null,
+      "totalOccurrences": 8,
+      "trainValCount": 1,
+      "testCount": 7,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 2,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 2,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.8571428571428571,
+          "testDecided": 7
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.42857142857142855,
+          "testDecided": 7
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.42857142857142855,
+          "testDecided": 7
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "morning-star",
+      "setupType": null,
+      "totalOccurrences": 5,
+      "trainValCount": 0,
+      "testCount": 5,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.6,
+          "testDecided": 5
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.4,
+          "testDecided": 5
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.4,
+          "testDecided": 5
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "three-white-soldiers",
+      "setupType": null,
+      "totalOccurrences": 15,
+      "trainValCount": 1,
+      "testCount": 14,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 6,
+          "testCount": 6,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 4,
+          "testCount": 4,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 3,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 2,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.35714285714285715,
+          "testDecided": 14
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.5384615384615384,
+          "testDecided": 13
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.6428571428571429,
+          "testDecided": 14
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "dark-cloud-cover",
+      "setupType": null,
+      "totalOccurrences": 11,
+      "trainValCount": 0,
+      "testCount": 11,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 5,
+          "testCount": 5,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 2,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.18181818181818182,
+          "testDecided": 11
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.18181818181818182,
+          "testDecided": 11
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.18181818181818182,
+          "testDecided": 11
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.2727272727272727,
+          "testDecided": 11
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "liquidity-sweep",
+      "setupType": "continuation",
+      "totalOccurrences": 12,
+      "trainValCount": 1,
+      "testCount": 11,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 5,
+          "testCount": 4,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 3,
+          "testCount": 3,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BTCUSDT",
+          "totalOccurrences": 2,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 2,
+          "testCount": 2,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 1,
+          "testAccuracy": 0.45454545454545453,
+          "testDecided": 11
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.8,
+          "testDecided": 10
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0.7272727272727273,
+          "testDecided": 11
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "liquidity-sweep-reaction",
+      "setupType": "continuation",
+      "totalOccurrences": 2,
+      "trainValCount": 1,
+      "testCount": 1,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "ETHUSDT",
+          "totalOccurrences": 1,
+          "testCount": 0,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 1,
+          "trainValAccuracy": 1,
+          "testAccuracy": 1,
+          "testDecided": 1
+        },
+        {
+          "expiryBars": 2,
+          "trainValAccuracy": 1,
+          "testAccuracy": 1,
+          "testDecided": 1
+        },
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 1,
+          "testDecided": 1
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "evening-star",
+      "setupType": null,
+      "totalOccurrences": 3,
+      "trainValCount": 1,
+      "testCount": 2,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "SOLUSDT",
+          "totalOccurrences": 2,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        },
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 3,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 2
+        },
+        {
+          "expiryBars": 5,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 2
+        },
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 2
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "falling-three-methods",
+      "setupType": null,
+      "totalOccurrences": 1,
+      "trainValCount": 0,
+      "testCount": 1,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "insufficient-data",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [
+        {
+          "symbolId": "BNBUSDT",
+          "totalOccurrences": 1,
+          "testCount": 1,
+          "testDecided": 0,
+          "testAccuracy": null
+        }
+      ],
+      "perExpiry": [
+        {
+          "expiryBars": 10,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 1
+        },
+        {
+          "expiryBars": 20,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 1
+        },
+        {
+          "expiryBars": 30,
+          "trainValAccuracy": 0,
+          "testAccuracy": 0,
+          "testDecided": 1
+        }
+      ],
+      "perFold": []
+    },
+    {
+      "patternName": "mean-reversion",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "macd-deceleration-continuation",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "fvg-rejection",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "tweezer-bottom",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "tweezer-top",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "abandoned-baby-bottom",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "abandoned-baby-top",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    },
+    {
+      "patternName": "rising-three-methods",
+      "setupType": null,
+      "totalOccurrences": 0,
+      "trainValCount": 0,
+      "testCount": 0,
+      "bestExpiryBars": null,
+      "testAccuracy": null,
+      "testWinCount": null,
+      "testDecidedCount": null,
+      "baselineMean": null,
+      "baselineStd": null,
+      "pValue": null,
+      "significant": null,
+      "wilsonLowerBound": null,
+      "passesWilsonGate": null,
+      "status": "no-detections",
+      "independentCount": null,
+      "independentTestDecided": null,
+      "testAccuracyDeduped": null,
+      "pValueDeduped": null,
+      "independentTestWins": null,
+      "wilsonLowerBoundDeduped": null,
+      "passesWilsonGateDeduped": null,
+      "driftBaseline": null,
+      "requiredWinRate": null,
+      "passesBreakevenGate": null,
+      "significantDeduped": null,
+      "verdict": null,
+      "verdictNote": null,
+      "perSymbol": [],
+      "perExpiry": [],
+      "perFold": []
+    }
+  ]
+}

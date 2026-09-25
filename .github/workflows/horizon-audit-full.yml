@@ -1,0 +1,163 @@
+# Положить в репозиторий как: .github/workflows/horizon-audit-full.yml
+name: Horizon Audit — полный прогон
+
+on:
+  workflow_dispatch:
+    inputs:
+      from:
+        description: 'С какой даты (ГГГГ-ММ-ДД)'
+        required: true
+        default: '2026-03-01'
+      to:
+        description: 'По какую дату (ГГГГ-ММ-ДД)'
+        required: true
+        default: '2026-09-17'
+      forex_symbols:
+        description: 'Форекс-пул через запятую (пусто = форекс не запускать)'
+        default: 'EURUSD,GBPUSD,USDJPY,AUDUSD'
+      crypto_symbols:
+        description: 'Крипто-пул через запятую (пусто = крипто не запускать)'
+        default: 'BTCUSDT,ETHUSDT'
+      payout:
+        description: 'Выплата контракта, % (порог безубыточности 100/(100+payout): 80 → 55.56%)'
+        default: '80'
+      funnel:
+        description: 'Воронка гейтов детекторов (кэш паттернов при этом игнорируется — полный пересчёт)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  forex:
+    if: ${{ inputs.forex_symbols != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      SYMBOLS: ${{ inputs.forex_symbols }}
+      FROM: ${{ inputs.from }}
+      TO: ${{ inputs.to }}
+      PAYOUT: ${{ inputs.payout }}
+      EXTRA_ARGS: ${{ inputs.funnel && '--funnel' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # НЕ 20: в Node 20 нет глобального WebSocket
+          cache: npm
+      - run: npm ci
+
+      - name: Проверка — правка process.exit(0) на месте
+        run: |
+          if ! grep -q "process.exit(0)" backtest/horizon-audit.ts; then
+            echo "::error::В backtest/horizon-audit.ts нет process.exit(0) — процесс зависнет после конца работы. См. руководство, шаг 1."
+            exit 1
+          fi
+
+      - name: Достать кэш свечей и паттернов (если есть от прошлого запуска)
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            backtest/.candle-cache
+            backtest/.cache
+          key: horizon-forex-v4-${{ inputs.from }}-${{ inputs.to }}-${{ github.run_id }}
+          restore-keys: |
+            horizon-forex-v4-${{ inputs.from }}-${{ inputs.to }}-
+
+      - name: Прогон horizon-audit (форекс-пул)
+        run: |
+          npm run backtest:horizon-audit -- \
+            --symbols="$SYMBOLS" --timeframe=1m \
+            --from="$FROM" --to="$TO" \
+            --split=walkforward --wf-folds=8 --purge-bars=30 \
+            --payout="$PAYOUT" $EXTRA_ARGS \
+            --output=backtest/output-run
+
+      - name: Показать отчёт прямо на странице запуска
+        if: success()
+        run: cat backtest/output-run/*.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Сохранить кэш (даже если прогон упал)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            backtest/.candle-cache
+            backtest/.cache
+          key: horizon-forex-v4-${{ inputs.from }}-${{ inputs.to }}-${{ github.run_id }}
+
+      - name: Выложить результаты
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: horizon-output-forex
+          path: backtest/output-run/
+          if-no-files-found: warn
+          retention-days: 30
+
+  crypto:
+    if: ${{ inputs.crypto_symbols != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      SYMBOLS: ${{ inputs.crypto_symbols }}
+      FROM: ${{ inputs.from }}
+      TO: ${{ inputs.to }}
+      PAYOUT: ${{ inputs.payout }}
+      EXTRA_ARGS: ${{ inputs.funnel && '--funnel' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Проверка — правка process.exit(0) на месте
+        run: |
+          if ! grep -q "process.exit(0)" backtest/horizon-audit.ts; then
+            echo "::error::В backtest/horizon-audit.ts нет process.exit(0) — процесс зависнет после конца работы. См. руководство, шаг 1."
+            exit 1
+          fi
+
+      - name: Достать кэш свечей и паттернов (если есть от прошлого запуска)
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            backtest/.candle-cache
+            backtest/.cache
+          key: horizon-crypto-v4-${{ inputs.from }}-${{ inputs.to }}-${{ github.run_id }}
+          restore-keys: |
+            horizon-crypto-v4-${{ inputs.from }}-${{ inputs.to }}-
+
+      - name: Прогон horizon-audit (крипто-пул)
+        run: |
+          npm run backtest:horizon-audit -- \
+            --symbols="$SYMBOLS" --timeframe=1m \
+            --from="$FROM" --to="$TO" \
+            --split=walkforward --wf-folds=8 --purge-bars=30 \
+            --payout="$PAYOUT" $EXTRA_ARGS \
+            --output=backtest/output-run
+
+      - name: Показать отчёт прямо на странице запуска
+        if: success()
+        run: cat backtest/output-run/*.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Сохранить кэш (даже если прогон упал)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            backtest/.candle-cache
+            backtest/.cache
+          key: horizon-crypto-v4-${{ inputs.from }}-${{ inputs.to }}-${{ github.run_id }}
+
+      - name: Выложить результаты
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: horizon-output-crypto
+          path: backtest/output-run/
+          if-no-files-found: warn
+          retention-days: 30

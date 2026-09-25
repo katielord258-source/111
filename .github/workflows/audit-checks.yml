@@ -1,0 +1,56 @@
+# Проверки методологии аудита (шаг 3 руководства) + общий npm run ci.
+# Запуск: Actions → «Audit checks — ci и нулевой аудит» → Run workflow.
+name: Audit checks — ci и нулевой аудит
+
+on:
+  workflow_dispatch:
+    inputs:
+      bars:
+        description: 'Баров синтетики для нулевого аудита (по умолчанию в скрипте 60000)'
+        default: '120000'
+      seeds:
+        description: 'Seed-ы через запятую'
+        default: '1,2'
+      payout:
+        description: 'Выплата, %'
+        default: '80'
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: npm run ci (typecheck + lint + test + проверка таблицы)
+        run: npm run ci
+
+      - name: Нулевой аудит (ожидается valid=0 в каждом прогоне)
+        run: |
+          npm run backtest:null-audit -- \
+            --bars="${{ inputs.bars }}" --noise=0,0.25 \
+            --seeds="${{ inputs.seeds }}" --payout="${{ inputs.payout }}" \
+            | tee null-audit.txt
+
+      - name: Вывод на страницу запуска
+        if: always()
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat null-audit.txt >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: null-audit
+          path: null-audit.txt
+          if-no-files-found: warn
+          retention-days: 30

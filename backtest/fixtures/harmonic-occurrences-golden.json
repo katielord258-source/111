@@ -1,0 +1,1035 @@
+{
+  "seed": 42,
+  "occurrences": [
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 349,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 350,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 351,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 352,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 494,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 495,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 496,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 639,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 640,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 641,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 642,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 643,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 784,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 785,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 786,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 787,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 929,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 930,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 931,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 932,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 933,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 934,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 935,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 936,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 937,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 938,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 939,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 940,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 941,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 942,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 943,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 944,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 945,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 946,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 947,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 948,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 949,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 950,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1069,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1070,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1071,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1072,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1073,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1074,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1075,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1076,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1077,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1078,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1079,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1080,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1081,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1082,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1083,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1084,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1214,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1215,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1216,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1217,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1218,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1219,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1220,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1221,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1222,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1223,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1224,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1225,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1226,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1359,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1360,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1361,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1362,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1363,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1364,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1504,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1505,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1506,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1507,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1508,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1509,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1510,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1511,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1512,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1513,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1514,
+      "direction": "buy",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1515,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1516,
+      "direction": "buy",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1654,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1655,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1656,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1657,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1658,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1659,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1660,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1661,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1662,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1663,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1664,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1665,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1666,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": -1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1667,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": 1,
+        "30": 1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1668,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": -1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1669,
+      "direction": "sell",
+      "outcomes": {
+        "10": -1,
+        "20": 1,
+        "30": -1
+      }
+    },
+    {
+      "patternName": "harmonic-pattern",
+      "barIndex": 1670,
+      "direction": "sell",
+      "outcomes": {
+        "10": 1,
+        "20": 1,
+        "30": 1
+      }
+    }
+  ]
+}

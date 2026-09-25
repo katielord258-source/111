@@ -1,0 +1,29 @@
+node_modules/
+.env
+
+# Сборка и артефакты инструментов — раньше dist/ и tsbuildinfo не
+# игнорировались и уезжали в архив проекта (63 МБ вместо ~5 МБ).
+dist/
+dist-ssr/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Кэш occurrences бэктеста (backtest/occurrence-cache.ts) — производный
+# артефакт, восстанавливается повторным прогоном.
+backtest/.cache/
+
+# Постраничный кэш сырых свечей (backtest/candle-cache.ts) — тот же принцип:
+# производный артефакт, безопасно удаляется, повторный прогон докачает
+# недостающие страницы заново.
+backtest/.candle-cache/
+
+# Черновик прогресса прогона horizon-audit (backtest/horizon-audit.ts,
+# writeProgressCheckpoint) — удаляется автоматически при успешном
+# завершении прогона; если остался в дереве, значит прогон прервался.
+backtest/output/*.progress.json
+
+# Каталоги сторонних агентов/IDE
+.kilo/
+.DS_Store
