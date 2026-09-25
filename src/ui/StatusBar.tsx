@@ -110,10 +110,7 @@ export function StatusBar() {
         <span className="text-base-500">выплата</span>
         <span className="font-mono font-semibold text-base-200">{profitPercent}%</span>
       </span>
-      <span className="flex shrink-0 items-center gap-1">
-        <span className="text-base-500">свечей</span>
-        <span className="font-mono text-base-300">{candleCount}</span>
-      </span>
+
       {marketClosed && (
         <span className="hidden shrink-0 items-center gap-1 text-accent-400 sm:flex">
           <Clock size={11} />
