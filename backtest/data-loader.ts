@@ -221,17 +221,13 @@ export async function paginateDerivHistory(
 
 async function loadDerivHistory(options: LoadOptions): Promise<LoadResult> {
   const { symbol } = options;
-  const fetchPage = async (endTime: number): Promise<{ batch: Candle[]; fromCache: boolean }> => {
+  return paginateDerivHistory(options, async (endTime) => {
     const cached = await readPage('deriv', symbol, endTime);
-    if (cached) {
-      return { batch: cached, fromCache: true };
-    }
+    if (cached) return { batch: cached, fromCache: true };
     const batch = await fetchDerivBatchWithFallback(symbol, endTime);
     await writePage('deriv', symbol, endTime, batch);
     return { batch, fromCache: false };
-  };
-  const { candles, truncatedByIterationCap } = await paginateDerivHistory(options, fetchPage);
-  return { candles, truncatedByIterationCap };
+  });
 }
 
 interface DerivPending {
