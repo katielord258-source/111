@@ -37,7 +37,16 @@ const MAX_PER_REQUEST = 5000;
 const BINANCE_MAX_PER_REQUEST = 1000;
 const REQUEST_TIMEOUT_MS = 15_000;
 const DERIV_GRANULARITY = 60;
-const MAX_DERIV_ITERATIONS = 200;
+// Это аварийный предохранитель от зависшего цикла, НЕ ограничитель объёма
+// данных — реальную остановку делают три легитимных условия ниже (reached
+// start boundary / no progress / too many empty batches in a row). BUGFIX
+// (v7, форекс-прогон 2026-03-01..2026-09-17): 200 оказалось туже, чем
+// реальная потребность (~300+ итераций при среднем throughput ~958
+// свечей/итерацию из-за частичных батчей на границах форекс-сессий),
+// поэтому предохранитель срабатывал раньше легитимной остановки и молча
+// обрезал историю. Подняли с большим запасом — это не magic number под
+// текущий диапазон, а по-настоящему "это не должно происходить в принципе".
+const MAX_DERIV_ITERATIONS = 3000;
 const RETRY_ATTEMPTS = 3;
 const RETRY_BASE_DELAY_MS = 500;
 
