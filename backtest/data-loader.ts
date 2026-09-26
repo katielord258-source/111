@@ -78,13 +78,18 @@ export interface LoadOptions {
   toMs: number;
 }
 
-export async function loadHistory(options: LoadOptions): Promise<Candle[]> {
+export interface LoadResult {
+  candles: Candle[];
+  truncatedByIterationCap: boolean;
+}
+
+export async function loadHistory(options: LoadOptions): Promise<LoadResult> {
   const { symbol } = options;
   if (isDerivSupported(symbol)) {
     return loadDerivHistory(options);
   }
   if (isCrypto(symbol)) {
-    return loadBinanceHistory(options);
+    return { candles: await loadBinanceHistory(options), truncatedByIterationCap: false };
   }
   return loadDerivHistory(options);
 }
@@ -156,8 +161,11 @@ function parseKlineRow(row: unknown): Candle {
   };
 }
 
-async function loadDerivHistory(options: LoadOptions): Promise<Candle[]> {
-  const { symbol, fromMs, toMs } = options;
+export async function paginateDerivHistory(
+  options: LoadOptions,
+  fetchPage: (endTime: number) => Promise<{ batch: Candle[]; fromCache: boolean }>,
+): Promise<{ candles: Candle[]; truncatedByIterationCap: boolean }> {
+  const { fromMs, toMs } = options;
   const allCandles: Candle[] = [];
   let endTime = Math.floor(toMs / 1000);
   const startSec = Math.floor(fromMs / 1000);
@@ -165,15 +173,14 @@ async function loadDerivHistory(options: LoadOptions): Promise<Candle[]> {
   let prevEndTime = endTime + 1;
   let pagesFromCache = 0;
   let pagesFetched = 0;
+  let truncatedByIterationCap = false;
 
   while (endTime > startSec && iterations < MAX_DERIV_ITERATIONS) {
     iterations++;
-    let batch = await readPage('deriv', symbol, endTime);
-    if (batch) {
+    const { batch, fromCache } = await fetchPage(endTime);
+    if (fromCache) {
       pagesFromCache++;
     } else {
-      batch = await fetchDerivBatchWithFallback(symbol, endTime);
-      await writePage('deriv', symbol, endTime, batch);
       pagesFetched++;
     }
     if (batch.length === 0) {
@@ -204,11 +211,27 @@ async function loadDerivHistory(options: LoadOptions): Promise<Candle[]> {
   }
 
   if (iterations >= MAX_DERIV_ITERATIONS) {
+    truncatedByIterationCap = true;
     console.log(`  [Deriv] stopping: hit iteration cap (${MAX_DERIV_ITERATIONS})`);
   }
 
-  console.log(`  [Deriv] finished after ${iterations} iterations, ${allCandles.length} candles (${pagesFromCache} page(s) from disk cache, ${pagesFetched} fetched over network)`);
-  return deduplicate(allCandles);
+  console.log(`  [Deriv] finished after ${iterations} iterations, ${allCandles.length} candles (${pagesFromCache} page(s) from disk cache, ${pagesFetched} fetched over network)${truncatedByIterationCap ? ' [TRUNCATED]' : ''}`);
+  return { candles: deduplicate(allCandles), truncatedByIterationCap };
+}
+
+async function loadDerivHistory(options: LoadOptions): Promise<LoadResult> {
+  const { symbol } = options;
+  const fetchPage = async (endTime: number): Promise<{ batch: Candle[]; fromCache: boolean }> => {
+    const cached = await readPage('deriv', symbol, endTime);
+    if (cached) {
+      return { batch: cached, fromCache: true };
+    }
+    const batch = await fetchDerivBatchWithFallback(symbol, endTime);
+    await writePage('deriv', symbol, endTime, batch);
+    return { batch, fromCache: false };
+  };
+  const { candles, truncatedByIterationCap } = await paginateDerivHistory(options, fetchPage);
+  return { candles, truncatedByIterationCap };
 }
 
 interface DerivPending {

@@ -105,7 +105,8 @@ async function main(): Promise<void> {
   }
 
   console.log(`\nLoading 1m history: ${args.symbol} ${args.from} \u2192 ${args.to}`);
-  const candles1m = await loadHistory({ symbol: args.symbol, fromMs, toMs });
+  const { candles: candles1m, truncatedByIterationCap } = await loadHistory({ symbol: args.symbol, fromMs, toMs });
+  if (truncatedByIterationCap) console.warn('WARNING: history was truncated by the iteration safety cap — results may be incomplete.');
   console.log(`Loaded ${candles1m.length} 1m candles`);
 
   if (candles1m.length < 100) {

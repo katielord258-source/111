@@ -11,7 +11,7 @@ import { generateRandomWalk } from './synthetic/random-walk';
 // иначе два тестовых процесса гонялись бы за один и тот же каталог.
 vi.mock('./data-loader', () => ({
   loadHistory: ({ symbol }: { symbol: string }) =>
-    Promise.resolve(generateRandomWalk({ bars: 7000, seed: symbol === 'BTCUSDT' ? 11 : 12, noiseFraction: 0.15 })),
+    Promise.resolve({ candles: generateRandomWalk({ bars: 7000, seed: symbol === 'BTCUSDT' ? 11 : 12, noiseFraction: 0.15 }), truncatedByIterationCap: false }),
 }));
 
 import { main } from './horizon-audit';

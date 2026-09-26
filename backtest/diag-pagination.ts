@@ -35,7 +35,8 @@ async function main(): Promise<void> {
   console.log(`Loading 1m history...`);
 
   const t0 = Date.now();
-  const candles = await loadHistory({ symbol: args.symbol, fromMs, toMs });
+  const { candles, truncatedByIterationCap } = await loadHistory({ symbol: args.symbol, fromMs, toMs });
+  if (truncatedByIterationCap) console.log(`\n⚠ WARNING: history was truncated by the iteration safety cap.`);
   const elapsed = Date.now() - t0;
 
   console.log(`\n--- Results ---`);
@@ -78,7 +79,7 @@ async function main(): Promise<void> {
   console.log(`  - "empty batch"     → API exhausted (genuine history end)`);
   console.log(`  - "reached start"  → successfully reached requested start date`);
   console.log(`  - "no progress"     → timestamps stopped moving backward`);
-  console.log(`  - "hit iteration cap" → reached ${200} iterations (safety limit)`);
+  console.log(`  - "hit iteration cap" → reached ${3000} iterations (safety limit)`);
 }
 
 main().catch((e: unknown) => { console.error(e); process.exit(1); });

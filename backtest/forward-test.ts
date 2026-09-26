@@ -40,7 +40,8 @@ async function main(): Promise<void> {
     const result: Record<string, number> = {};
     for (const symbol of rule.instruments) {
       console.log(`Loading ${symbol} (${rule.calibrationWindow.from} → ${rule.calibrationWindow.to})...`);
-      const candles = await loadHistory({ symbol, fromMs, toMs });
+      const { candles, truncatedByIterationCap } = await loadHistory({ symbol, fromMs, toMs });
+      if (truncatedByIterationCap) console.warn(`  ${symbol}: WARNING — calibration history truncated by iteration cap`);
       const { threshold, candidates } = calibrateThreshold(candles, rule.atrPeriod, rule.strengthPercentile);
       console.log(`  ${symbol}: candles=${candles.length}, candidates=${candidates}, threshold(p${rule.strengthPercentile * 100}) = ${threshold}`);
       result[symbol] = threshold;
@@ -66,7 +67,8 @@ async function main(): Promise<void> {
   for (const symbol of rule.instruments) {
     console.log(`Loading ${symbol}...`);
     // 2 часа до старта — только для прогрева ATR; события до forwardStartUtc отбрасываются в extractForwardEvents
-    const candles = await loadHistory({ symbol, fromMs: startMs - 2 * 3_600_000, toMs });
+    const { candles, truncatedByIterationCap: fwdTruncated } = await loadHistory({ symbol, fromMs: startMs - 2 * 3_600_000, toMs });
+    if (fwdTruncated) console.warn(`  ${symbol}: WARNING — forward history truncated by iteration cap`);
     const ev = extractForwardEvents(symbol, candles, rule.thresholds[symbol] as number, rule);
     console.log(`  ${symbol}: событий ${ev.length} (порог ${rule.thresholds[symbol]})`);
     events.push(...ev);

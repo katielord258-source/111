@@ -109,7 +109,8 @@ async function main(): Promise<void> {
   ];
   for (const symbol of symbols) {
     console.log(`Loading ${symbol}...`);
-    const candles = await loadHistory({ symbol, fromMs, toMs });
+    const { candles, truncatedByIterationCap } = await loadHistory({ symbol, fromMs, toMs });
+    if (truncatedByIterationCap) console.warn(`  ${symbol}: WARNING — history truncated by iteration cap`);
     const res = computeContinuationStats(candles, { ...cfg, entry: 'close' });
     const resNext = computeContinuationStats(candles, { ...cfg, entry: 'next-open' });
     lines.push(...renderSymbolSection(symbol, res, horizons, payout, resNext));

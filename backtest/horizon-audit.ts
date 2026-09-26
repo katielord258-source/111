@@ -1274,8 +1274,9 @@ export async function main(): Promise<void> {
     }
 
     console.log(`\nLoading 1m history for ${symbolId}...`);
-    const candles1m = await loadHistory({ symbol: symbolId, fromMs, toMs });
-    console.log(`  ${symbolId}: ${candles1m.length} 1m candles`);
+    const { candles: candles1mRaw, truncatedByIterationCap: trunc1m } = await loadHistory({ symbol: symbolId, fromMs, toMs });
+    const candles1m = candles1mRaw;
+    console.log(`  ${symbolId}: ${candles1m.length} 1m candles${trunc1m ? ' [TRUNCATED]' : ''}`);
 
     if (candles1m.length < 500) {
       console.warn(`  ${symbolId}: skipping — not enough 1m candles (need at least 500)`);

@@ -48,7 +48,8 @@ async function main(): Promise<void> {
   ];
   for (const symbol of symbols) {
     console.log(`Loading ${symbol}...`);
-    const candles = await loadHistory({ symbol, fromMs, toMs });
+    const { candles, truncatedByIterationCap } = await loadHistory({ symbol, fromMs, toMs });
+    if (truncatedByIterationCap) console.warn(`  ${symbol}: WARNING — history truncated by iteration cap`);
     const st = computeMicrostructureStats(candles, 5);
     const reading = interpretLag1(st);
     const label = reading === 'mean-reverting' ? 'возвраты дребезжат (mean-reverting)' : reading === 'trending' ? 'инерция (trending)' : 'нет значимой автокорреляции';
