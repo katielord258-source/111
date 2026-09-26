@@ -212,7 +212,7 @@ export async function paginateDerivHistory(
 
   if (iterations >= MAX_DERIV_ITERATIONS) {
     truncatedByIterationCap = true;
-    console.log(`  [Deriv] stopping: hit iteration cap (${MAX_DERIV_ITERATIONS})`);
+    console.log(`  [Deriv] stopping: hit iteration cap (${MAX_DERIV_ITERATIONS}) — history is INCOMPLETE, oldest fetched candle did not reach start boundary`);
   }
 
   console.log(`  [Deriv] finished after ${iterations} iterations, ${allCandles.length} candles (${pagesFromCache} page(s) from disk cache, ${pagesFetched} fetched over network)${truncatedByIterationCap ? ' [TRUNCATED]' : ''}`);
