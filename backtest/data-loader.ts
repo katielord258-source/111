@@ -80,7 +80,7 @@ export interface LoadOptions {
 
 export interface LoadResult {
   candles: Candle[];
-  truncatedByIterationCap: boolean;
+  truncated: boolean;
 }
 
 export async function loadHistory(options: LoadOptions): Promise<LoadResult> {
@@ -89,7 +89,7 @@ export async function loadHistory(options: LoadOptions): Promise<LoadResult> {
     return loadDerivHistory(options);
   }
   if (isCrypto(symbol)) {
-    return { candles: await loadBinanceHistory(options), truncatedByIterationCap: false };
+    return { candles: await loadBinanceHistory(options), truncated: false };
   }
   return loadDerivHistory(options);
 }
@@ -164,7 +164,7 @@ function parseKlineRow(row: unknown): Candle {
 export async function paginateDerivHistory(
   options: LoadOptions,
   fetchPage: (endTime: number) => Promise<{ batch: Candle[]; fromCache: boolean }>,
-): Promise<{ candles: Candle[]; truncatedByIterationCap: boolean }> {
+): Promise<{ candles: Candle[]; truncated: boolean }> {
   const { fromMs, toMs } = options;
   const allCandles: Candle[] = [];
   let endTime = Math.floor(toMs / 1000);
@@ -173,7 +173,7 @@ export async function paginateDerivHistory(
   let prevEndTime = endTime + 1;
   let pagesFromCache = 0;
   let pagesFetched = 0;
-  let truncatedByIterationCap = false;
+  let truncated = false;
 
   while (endTime > startSec && iterations < MAX_DERIV_ITERATIONS) {
     iterations++;
@@ -211,12 +211,12 @@ export async function paginateDerivHistory(
   }
 
   if (iterations >= MAX_DERIV_ITERATIONS) {
-    truncatedByIterationCap = true;
+    truncated = true;
     console.log(`  [Deriv] stopping: hit iteration cap (${MAX_DERIV_ITERATIONS}) — history is INCOMPLETE, oldest fetched candle did not reach start boundary`);
   }
 
-  console.log(`  [Deriv] finished after ${iterations} iterations, ${allCandles.length} candles (${pagesFromCache} page(s) from disk cache, ${pagesFetched} fetched over network)${truncatedByIterationCap ? ' [TRUNCATED]' : ''}`);
-  return { candles: deduplicate(allCandles), truncatedByIterationCap };
+  console.log(`  [Deriv] finished after ${iterations} iterations, ${allCandles.length} candles (${pagesFromCache} page(s) from disk cache, ${pagesFetched} fetched over network)${truncated ? ' [TRUNCATED]' : ''}`);
+  return { candles: deduplicate(allCandles), truncated };
 }
 
 async function loadDerivHistory(options: LoadOptions): Promise<LoadResult> {

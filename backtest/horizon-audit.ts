@@ -1274,7 +1274,7 @@ export async function main(): Promise<void> {
     }
 
     console.log(`\nLoading 1m history for ${symbolId}...`);
-    const { candles: candles1mRaw, truncatedByIterationCap: trunc1m } = await loadHistory({ symbol: symbolId, fromMs, toMs });
+    const { candles: candles1mRaw, truncated: trunc1m } = await loadHistory({ symbol: symbolId, fromMs, toMs });
     const candles1m = candles1mRaw;
     console.log(`  ${symbolId}: ${candles1m.length} 1m candles${trunc1m ? ' [TRUNCATED]' : ''}`);
 

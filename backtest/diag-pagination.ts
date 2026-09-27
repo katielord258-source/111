@@ -35,8 +35,8 @@ async function main(): Promise<void> {
   console.log(`Loading 1m history...`);
 
   const t0 = Date.now();
-  const { candles, truncatedByIterationCap } = await loadHistory({ symbol: args.symbol, fromMs, toMs });
-  if (truncatedByIterationCap) console.log(`\n⚠ WARNING: history was truncated by the iteration safety cap.`);
+  const { candles, truncated } = await loadHistory({ symbol: args.symbol, fromMs, toMs });
+  if (truncated) console.log(`\n⚠ WARNING: history was truncated by the iteration safety cap.`);
   const elapsed = Date.now() - t0;
 
   console.log(`\n--- Results ---`);
